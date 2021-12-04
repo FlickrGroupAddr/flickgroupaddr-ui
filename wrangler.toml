@@ -1,6 +1,7 @@
 account_id = ""
 name = "flickrgroupaddr-ui"
 type = "webpack"
-workers_dev = true
+workers_dev = false
+route = "https://flickrgroupaddr.com/*"
 site = { bucket = "./public" }
 compatibility_date = "2021-12-04"
