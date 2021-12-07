@@ -9,6 +9,8 @@ async function redirectToFlickrAuth() {
     const jsonResponse = await flickrUrlResponse.json();
 
     console.log( "Flickr URL we're about to redirect to: " + jsonResponse["flickr_user_auth_url"] );
+
+    window.location = jsonResponse["flickr_user_auth_url"]
 }
 
 function attachEventListeners() {
