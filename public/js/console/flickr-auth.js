@@ -1,5 +1,6 @@
 const flickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_creds";
 
+/*
 async function haveAuthorizedWithFlickr() {
     const fgaAccessToken = getFgaAuthToken();
 
@@ -12,6 +13,7 @@ async function haveAuthorizedWithFlickr() {
 
     return returnedJson['have_flickr_creds'];
 }
+*/
 
 console.log("Are we getting here");
 
