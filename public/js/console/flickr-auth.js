@@ -1,4 +1,5 @@
 const flickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_creds";
+
 function haveAuthorizedWithFlickr() {
     const fgaAccessToken = getFgaAuthToken();
 
@@ -12,6 +13,9 @@ function haveAuthorizedWithFlickr() {
     return returnedJson['have_flickr_creds'];
 }
 
+console.log("Are we getting here");
+
+/*
 if ( haveAuthorizedWithFlickr() === false ) {
     console.log("Need to do Flickr auth");
 
@@ -19,3 +23,4 @@ if ( haveAuthorizedWithFlickr() === false ) {
 } else {
     console.log("Have flickr auth");
 } 
+*/
