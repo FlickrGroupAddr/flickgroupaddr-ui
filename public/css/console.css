@@ -1,3 +1,10 @@
 body { 
+    border: 0.5in;
     font-family: 'Roboto', sans-serif;
+}
+
+div#flickr_auth {
+
+    margin-left: 0.5in;
+
 }
