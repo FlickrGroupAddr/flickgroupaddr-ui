@@ -4,7 +4,6 @@ body {
 }
 
 div#flickr_auth {
-
     margin-left: 0.5in;
-
+    display: none;
 }
