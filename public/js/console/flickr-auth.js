@@ -1,13 +1,10 @@
 function haveAuthorizedWithFlickr() {
-
     const fgaAccessToken = getFgaAuthCookie();
 
     return false;
 }
 
-const haveDoneFlickrAuth = haveAuthorizedUserWithFlickr();
-
-if ( haveDoneFlickrAuth === false ) {
+if ( haveAuthorizedWithFlickr === false ) {
     console.log("Need to do Flickr auth");
 
     document.getElementById("div_flickr_id").style.display = "block";
