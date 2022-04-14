@@ -6,10 +6,10 @@ function haveAuthorizedWithFlickr() {
         { 
             headers: { 'Authorization': fgaAccessToken }
         } );
-    
 
+    let returnedJson = await fetchResponse.json();
 
-    return false;
+    return returnedJson['have_flickr_creds'];
 }
 
 if ( haveAuthorizedWithFlickr() === false ) {
