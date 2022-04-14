@@ -16,4 +16,4 @@ function getCookie( cookieName ) {
 
 const accessToken = getCookie( "FGA_ACCESS_TOKEN" );
 
-print( "Access token: " + accessToken );
+console.log( "Access token: " + accessToken );
