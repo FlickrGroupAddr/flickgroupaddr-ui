@@ -1,6 +1,6 @@
 function processAccessToken( accessToken ) {
     console.log( "We found an access token in the window URL" );
-    #console.log( "Access code: " + accessToken );
+    //console.log( "Access code: " + accessToken );
 
     // Set the cookie 
     document.cookie = "FGA_ACCESS_TOKEN=" + accessToken;
