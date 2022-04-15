@@ -5,6 +5,7 @@ const haveFlickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazon
 
 function checkForFlickrCreds() {
 
+    let fetchResponse = await fetch( haveFlickrCredsEndpoint );
     return false;
 
 }
