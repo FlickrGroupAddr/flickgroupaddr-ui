@@ -3,7 +3,12 @@ console.log("Are we getting here");
 
 const haveFlickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_creds";
 
-async function checkForFlickrCreds( authToken ) {
+function checkForFlickrCreds( authToken ) {
+    return await thisOtherThis( authToken );
+}
+
+
+async function thisOtherShit( authToken ) {
 
     let fetchResponse = await fetch( haveFlickrCredsEndpoint,
         {
@@ -17,6 +22,6 @@ console.log("I'm getting bored");
 
 const authToken = getFgaAuthToken();
 
-const haveFlickrCreds = await checkForFlickrCreds( authToken );
+const haveFlickrCreds = checkForFlickrCreds( authToken );
 
 console.log("Have flickr creds: " + haveFlickrCreds );
