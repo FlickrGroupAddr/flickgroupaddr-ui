@@ -3,11 +3,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-body > div {
+body div {
     margin-left: 0.5in;
 }
 
-body > div > div {
+body div div {
     margin-left: 1.0in;
 }
 
