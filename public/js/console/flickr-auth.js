@@ -14,6 +14,8 @@ async function checkForFlickrCreds() {
 
 }
 
+console.log("I'm getting bored");
+
 const haveFlickrCreds = checkForFlickrCreds();
 
 console.log("Have flickr creds: " + haveFlickrCreds );
