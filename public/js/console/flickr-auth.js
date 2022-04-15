@@ -1,13 +1,17 @@
-const haveFlickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_creds";
+const flickrIdEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_id";
 
 
 
 async function initiateFlickrAuth() {
     console.log( "Initiating Flickr auth process" );
 
-    const fetchResponse = await fetch( initiateFlickrAuthEndpoint,
+    const fetchResponse = await fetch( flickrIdEndpoint,
         {
-            headers: { "Authorization": getFgaAuthToken() } 
+            headers: { 
+                "Authorization": getFgaAuthToken()
+            },
+
+            method: "PUT"
         });
 
     const jsonBody = await fetchResponse.json();
@@ -24,7 +28,7 @@ function addEventListeners() {
 
 async function getFlickrIdentity( authToken ) {
 
-    let fetchResponse = await fetch( haveFlickrCredsEndpoint,
+    let fetchResponse = await fetch( flickrIdEndpoint,
         {
             headers: { "Authorization": authToken } 
         });
