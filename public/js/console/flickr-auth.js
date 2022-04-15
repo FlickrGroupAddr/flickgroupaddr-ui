@@ -17,6 +17,10 @@ console.log("I'm getting bored");
 
 const authToken = getFgaAuthToken();
 
-const haveFlickrCreds = checkForFlickrCreds( authToken );
-
-console.log("Have flickr creds: " + haveFlickrCreds );
+checkForFlickrCreds( authToken )
+                                .then( haveFlickrCreds => {
+                                    console.log("Have flickr creds: " + haveFlickrCreds );
+                                })
+                                .catch( err => {
+                                    console.log("Exception thrown during creds check");
+                                });
