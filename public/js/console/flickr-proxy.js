@@ -17,6 +17,6 @@ console.log("I'm getting bored");
 
 const authToken = getFgaAuthToken();
 
-const haveFlickrCreds = checkForFlickrCreds( authToken );
+const haveFlickrCreds = await checkForFlickrCreds( authToken );
 
 console.log("Have flickr creds: " + haveFlickrCreds );
