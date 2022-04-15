@@ -3,7 +3,7 @@ console.log("Are we getting here");
 
 const haveFlickrCredsEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_creds";
 
-function checkForFlickrCreds() {
+async function checkForFlickrCreds() {
 
     let fetchResponse = await fetch( haveFlickrCredsEndpoint );
     return false;
