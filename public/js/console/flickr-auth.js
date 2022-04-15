@@ -17,7 +17,8 @@ const authToken = getFgaAuthToken();
 
 getFlickrIdentity( authToken ).then( returnedIdentity => {
     if ( returnedIdentity === null ) {
-        document.getElementById("div_flickr_auth").style.display = "block";
+        console.log( "No associated flickr ID, display section to create an association" )
+        document.getElementById("div_flickr_id_none").style.display = "block";
     }
 }).catch( err => {
     console.log("Exception thrown during creds check");
