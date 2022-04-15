@@ -52,5 +52,5 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         // TODO: display username & user NSID
     }
 }).catch( err => {
-    console.log("Exception thrown during creds check");
+    console.log("Exception thrown during flickr ID check");
 });
