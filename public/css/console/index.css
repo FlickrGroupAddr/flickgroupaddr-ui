@@ -7,6 +7,10 @@ body > div {
     margin-left: 0.5in;
 }
 
+body > div > div {
+    margin-left: 1.0in;
+}
+
 div#div_flickr_id_valid {
     display: none;
 }
