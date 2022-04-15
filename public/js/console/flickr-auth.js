@@ -14,6 +14,6 @@ async function checkForFlickrCreds() {
 
 }
 
-const haveFlickrCreds = await checkForFlickrCreds();
+const haveFlickrCreds = checkForFlickrCreds();
 
 console.log("Have flickr creds: " + haveFlickrCreds );
