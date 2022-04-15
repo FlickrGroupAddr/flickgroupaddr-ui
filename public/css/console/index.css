@@ -9,6 +9,7 @@ body div {
 
 div#div_flickr_id {
     margin-left: 0.5in;
+    display: none;
 }
 
 div#div_flickr_id_valid {
