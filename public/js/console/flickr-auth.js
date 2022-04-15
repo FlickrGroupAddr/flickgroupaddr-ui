@@ -64,3 +64,4 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         // TODO: display username & user NSID
     }
 });
+
