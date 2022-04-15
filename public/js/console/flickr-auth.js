@@ -63,6 +63,4 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
     else {
         // TODO: display username & user NSID
     }
-}).catch( err => {
-    console.log("Exception thrown during flickr ID check");
 });
