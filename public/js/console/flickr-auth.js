@@ -17,7 +17,9 @@ async function initiateFlickrAuth() {
 
     const jsonBody = await fetchResponse.json();
 
-    console.log( "Got response from Flickr auth endpoint: " + JSON.stringify(jsonBody) );
+    //console.log( "Got response from Flickr auth endpoint: " + JSON.stringify(jsonBody) );
+
+    location.href = jsonBody['flickr_auth_url'];
 }
 
 
