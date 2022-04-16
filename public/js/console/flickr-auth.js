@@ -36,8 +36,10 @@ async function getFlickrIdentity( authToken ) {
             headers: { "Authorization": authToken } 
         });
 
+    let returnIdentity = null;
+
     if ( fetchResponse.ok ) {
-        const returnIdentity = await fetchResponse.json();
+        returnIdentity = await fetchResponse.json();
     } else {
         if ( fetchResponse.status === 401 ) {
             console.log( "Credentials have expired" );
@@ -45,7 +47,6 @@ async function getFlickrIdentity( authToken ) {
         }
         else if ( fetchResponse.status === 404 ) {
             console.log( "User does not have an associated Flickr ID" );
-            const returnIdentity = null;
         } 
     }
 
