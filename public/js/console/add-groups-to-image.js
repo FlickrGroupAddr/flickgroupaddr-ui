@@ -3,7 +3,23 @@ const imageInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.co
 const userInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/user";
 
 async function fetchPicGroups( imageUrl ) {
-    return [];
+    const constructedRequestUrl = imageInfoEndpoint + "?" + new URLSearchParameters(
+        {
+            flickr_photoid  : "51907506088",
+            query_type      : "picture_groups"
+        }
+    );
+    const fetchResponse = await fetch( constructedRequestUrl,
+        {
+            headers: {
+                "Authorization": getFgaAuthToken()
+            },
+
+            method: "GET"
+        });
+
+    const jsonBody = await fetchResponse.json();
+
 }
 
 
