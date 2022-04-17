@@ -64,7 +64,11 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id_none").style.display = "block";
     }
     else {
-        // TODO: display username & user NSID
+        document.getElementById("span_flickr_userid").value = returnedIdentity['username'];
+        document.getElementById("span_flickr_user_nsid").value =
+            returnedIdentity['user_nsid'];
+        document.getElementById("div_flickr_id").style.display = "block";
+        document.getElementById("div_flickr_id_valid").style.display = "block";
     }
 });
 
