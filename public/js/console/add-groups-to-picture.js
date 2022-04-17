@@ -24,9 +24,26 @@ async function fetchPicGroups( imageUrl ) {
 }
 
 
-async function fetchUserGroups() {
 
-    return [];
+async function fetchUserGroups() {
+    const constructedRequestUrl = flickrUserEndpoint + "?" + new URLSearchParams(
+        {
+            query_type  : "user_groups"
+        }
+    );
+    const fetchResponse = await fetch( constructedRequestUrl,
+        {
+            headers: {
+                "Authorization": getFgaAuthToken()
+            },
+
+            method: "GET"
+        });
+
+    const jsonBody = await fetchResponse.json();
+
+    return jsonBody['user_flickr_groups'];
+
 }
 
 
