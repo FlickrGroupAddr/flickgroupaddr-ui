@@ -63,6 +63,7 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id").style.display = "block";
         document.getElementById("div_flickr_id_none").style.display = "block";
     }
+    /*
     else {
         document.getElementById("span_flickr_userid").textContent = returnedIdentity['username'];
         document.getElementById("span_flickr_user_nsid").textContent =
@@ -70,5 +71,7 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id").style.display = "block";
         document.getElementById("div_flickr_id_valid").style.display = "block";
     }
+    */
+    console.log("Returned ID: " + JSON.stringify(returnedIdentity);
 });
 
