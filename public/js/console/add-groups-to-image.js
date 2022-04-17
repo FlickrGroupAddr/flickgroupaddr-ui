@@ -5,8 +5,8 @@ const userInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com
 async function fetchPicGroups( imageUrl ) {
     const constructedRequestUrl = imageInfoEndpoint + "?" + new URLSearchParameters(
         {
-            flickr_photoid  : "51907506088",
-            query_type      : "picture_groups"
+            flickr_photo_id     : "51907506088",
+            query_type          : "picture_groups"
         }
     );
     const fetchResponse = await fetch( constructedRequestUrl,
