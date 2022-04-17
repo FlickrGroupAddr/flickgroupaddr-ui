@@ -1,9 +1,9 @@
-const imageInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/image";
+const flickrPictureEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/picture";
 
-const userInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/user";
+const flickrUserEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user";
 
 async function fetchPicGroups( imageUrl ) {
-    const constructedRequestUrl = imageInfoEndpoint + "?" + new URLSearchParams(
+    const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
         {
             flickr_photo_id     : "51907506088",
             query_type          : "picture_groups"
