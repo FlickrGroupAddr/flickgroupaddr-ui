@@ -27,6 +27,7 @@ async function processNewImageUrl() {
     const imageUrl = document.getElementById("input_new_request_url").value;
 
     console.log("User wants to add new groups to image " + imageUrl 
+
         );
 
 }
