@@ -72,6 +72,6 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id_valid").style.display = "block";
     }
     */
-    console.log("Returned ID: " + JSON.stringify(returnedIdentity);
+    console.log("Returned ID: " + JSON.stringify(returnedIdentity) );
 });
 
