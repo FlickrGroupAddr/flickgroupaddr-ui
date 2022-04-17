@@ -4,6 +4,7 @@ body {
 }
 
 body div {
+    margin-top: 0.25in;
     margin-left: 0.5in;
 }
 
@@ -20,3 +21,9 @@ div#div_flickr_id_none {
     margin-left: 0.5in;
     display: none;
 }
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
