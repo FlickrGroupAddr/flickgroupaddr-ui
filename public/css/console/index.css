@@ -22,6 +22,10 @@ div#div_flickr_id_none {
     display: none;
 }
 
+div#div_new_requests {
+    display: none;
+}
+
 div#div_outstanding_requests {
     display: none;
 }
