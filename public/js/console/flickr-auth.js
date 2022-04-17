@@ -75,7 +75,7 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id").style.display = "block";
         document.getElementById("div_flickr_id_valid").style.display = "block";
 
-        document.getElementById("div_new_requests").style.display = "block";
+        document.getElementById("div_new_request").style.display = "block";
         document.getElementById("div_outstanding_requests").style.display = "block";
         document.getElementById("div_app_stats").style.display = "block";
     }
