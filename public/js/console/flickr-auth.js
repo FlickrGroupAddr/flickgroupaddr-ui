@@ -1,6 +1,10 @@
 const fgaLoginUrl = "https://flickrgroupaddr.auth.us-east-2.amazoncognito.com/login?client_id=54om78s59usqmo8nqdr7m7bktg&response_type=code&scope=email+openid&redirect_uri=https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/oauth/callback"
 const flickrIdEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr_id";
 
+const imageInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/image";
+
+const userInfoEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/user";
+
 
 
 async function initiateFlickrAuth() {
@@ -22,14 +26,29 @@ async function initiateFlickrAuth() {
     location.href = jsonBody['flickr_auth_url'];
 }
 
+async function fetchPicGroups( picUrl ) {
+
+    return [];
+}
+
+async function fetchUserGroups() {
+
+    return [];
+
+}
+
 
 async function processNewImageUrl() {
     const imageUrl = document.getElementById("input_new_request_url").value;
 
-    console.log("User wants to add new groups to image " + imageUrl 
+    console.log("User wants to add new groups to image " + imageUrl );
 
-        );
+    const picGroups = await fetchPicGroups( imageUrl );
+    const userGroups = await fetchUserGroups();
 
+
+    console.log("Groups for this pic: " + JSON.stringify(picGroups) );
+    console.log("Groups for this user: " + JSON.stringify(userGroups) );
 }
 
 
