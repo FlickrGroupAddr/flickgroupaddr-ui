@@ -22,8 +22,15 @@ div#div_flickr_id_none {
     display: none;
 }
 
-table {
+div#div_outstanding_requests {
+    display: none;
+}
+
+div#div_app_stats {
+    display: none;
+}
+
+table#table_fga_outstanding_requests {
     border: 1px solid black;
     border-collapse: collapse;
 }
-

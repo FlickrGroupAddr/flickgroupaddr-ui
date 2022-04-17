@@ -64,15 +64,9 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("div_flickr_id_none").style.display = "block";
     }
     else {
-        console.log("Returned ID: " + JSON.stringify(returnedIdentity) );
+        console.log("Got Flickr ID for this user" );
 
-        /*
-        document.getElementById("span_flickr_userid").textContent = returnedIdentity['username'];
-        document.getElementById("span_flickr_user_nsid").textContent =
-            returnedIdentity['user_nsid'];
-        */
         let userIdSpan = document.getElementById("span_flickr_userid");
-        console.log( "What we got for user ID span: " + userIdSpan );
         userIdSpan.textContent = returnedIdentity['username'];
 
         let userNsidSpan = document.getElementById("span_flickr_user_nsid");
@@ -80,6 +74,9 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
 
         document.getElementById("div_flickr_id").style.display = "block";
         document.getElementById("div_flickr_id_valid").style.display = "block";
+
+        document.getElementById("div_outstanding_requests").style.display = "block";
+        document.getElementById("div_app_stats").style.display = "block";
     }
 });
 
