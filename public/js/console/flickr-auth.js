@@ -71,6 +71,8 @@ getFlickrIdentity( authToken ).then( returnedIdentity => {
         document.getElementById("span_flickr_user_nsid").textContent =
             returnedIdentity['user_nsid'];
         */
+        let userIdSpan = document.getElementById("span_flickr_userid");
+        console.log( "What we got for user ID span: " + userIdSpan );
         document.getElementById("div_flickr_id").style.display = "block";
         document.getElementById("div_flickr_id_valid").style.display = "block";
     }
