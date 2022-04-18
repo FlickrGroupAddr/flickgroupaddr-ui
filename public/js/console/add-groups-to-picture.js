@@ -9,11 +9,11 @@ async function fetchPicGroups( imageUrl ) {
 
     console.log( "Tokenized URL:\n" + JSON.stringify(tokenArray) );
 
-    if ( tokenArray.length < 5 ) {
+    if ( tokenArray.length < 6 ) {
         console.log( "Rejecting request, doesn't appear to be valid" );
         return;
     }
-    const photoId = tokenArray[4];
+    const photoId = tokenArray[5];
 
     console.log("Think we got photo ID " + photoId );
 
