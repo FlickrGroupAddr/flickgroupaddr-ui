@@ -20,6 +20,8 @@ async function fetchPicGroups( imageUrl ) {
 
     const jsonBody = await fetchResponse.json();
 
+    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+
     return jsonBody['groups_for_pic'];
 }
 
