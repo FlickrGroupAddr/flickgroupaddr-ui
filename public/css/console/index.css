@@ -38,3 +38,7 @@ table#table_fga_outstanding_requests {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+button#button_change_url {
+    display: none;
+}

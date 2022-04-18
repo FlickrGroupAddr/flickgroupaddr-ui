@@ -71,6 +71,19 @@ async function fetchUserGroups() {
 
 
 async function processNewImageUrl() {
+    // First let's make the changes to the UI
+
+    // Make the URL immutable
+    document.getElementById("input_new_request_url").disabled = true
+
+    // Hide the "new URL" button
+    document.getElementById("button_submit_request_url").style.display = "none";
+
+    // Show the "change URL" button
+    document.getElementById("button_change_url").style.display = "block";
+
+
+
     const imageUrl = document.getElementById("input_new_request_url").value;
 
     console.log("User wants to add new groups to image " + imageUrl );
