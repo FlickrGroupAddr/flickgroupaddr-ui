@@ -9,6 +9,8 @@ function changeUrl() {
     document.getElementById("button_change_url").style.display = "none";
     document.getElementById("button_submit_request_url").style.display = "block";
     document.getElementById("input_new_request_url").disabled = false;
+    document.getElementById("input_new_request_url").value = "";
+
 
     document.getElementById("table_picture_groups").style.display = "none";
 
