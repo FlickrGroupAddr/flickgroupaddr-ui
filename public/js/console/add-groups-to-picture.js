@@ -15,11 +15,13 @@ async function fetchPicGroups( imageUrl ) {
     }
     const photoId = tokenArray[4];
 
+    console.log("Think we got photo ID " + photoId );
+
     // That offset thing is dangerous AF, let's make sure it's purely numeric like a photo
     // ID
     if ( isNaN(photoId) === true ) {
         console.log( "The token we found wasn't numeric, bailing out" );
-        reurn;
+        return;
     }
 
     const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
