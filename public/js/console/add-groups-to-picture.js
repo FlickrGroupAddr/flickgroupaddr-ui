@@ -11,7 +11,6 @@ function changeUrl() {
     document.getElementById("input_new_request_url").disabled = false;
     document.getElementById("input_new_request_url").value = "";
 
-
     document.getElementById("table_picture_groups").style.display = "none";
 
 }
