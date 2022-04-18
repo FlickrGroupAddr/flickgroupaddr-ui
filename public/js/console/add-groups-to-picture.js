@@ -2,6 +2,19 @@ const flickrPictureEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaw
 
 const flickrUserEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user";
 
+
+function changeUrl() {
+    console.log( "User clicked the Change URL button" );
+
+    document.getElementById("button_change_url").style.display = "none";
+    document.getElementById("button_submit_request_url").style.display = "block";
+    document.getElementById("input_new_request_url").disabled = false;
+
+    document.getElementById("table_picture_groups").style.display = "none";
+
+}
+
+
 async function fetchPicGroups( imageUrl ) {
 
     // Parse the pic ID out of the URL they gave us
@@ -79,10 +92,6 @@ async function processNewImageUrl() {
     // Hide the "new URL" button
     document.getElementById("button_submit_request_url").style.display = "none";
 
-    // Show the "change URL" button
-    document.getElementById("button_change_url").style.display = "block";
-
-
 
     const imageUrl = document.getElementById("input_new_request_url").value;
 
@@ -94,11 +103,20 @@ async function processNewImageUrl() {
 
     console.log("Groups for this pic: " + JSON.stringify(picGroups) );
     console.log("Groups for this user: " + JSON.stringify(userGroups) );
+
+
+    // Show the "change URL" button
+    document.getElementById("button_change_url").style.display = "block";
+
+    // Show the table with groups for this pic
+    document.getElementById("table_picture_groups").style.display = "table";
 }
 
 function addEventListeners() {
     document.getElementById("button_submit_request_url").addEventListener( "click",
         processNewImageUrl );
+    document.getElementById("button_change_url").addEventListener( "click",
+        changeUrl );
     console.log( "event listeners added in add groups processor" );
 }
 

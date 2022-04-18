@@ -42,3 +42,7 @@ table#table_fga_outstanding_requests {
 button#button_change_url {
     display: none;
 }
+
+table#table_picture_groups {
+    display: none;
+}
