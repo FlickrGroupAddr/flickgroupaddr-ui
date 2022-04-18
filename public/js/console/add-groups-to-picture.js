@@ -84,6 +84,7 @@ async function fetchUserGroups() {
 
 
 async function processNewImageUrl() {
+    console.log("User clicked button to do something with a URL");
     // First let's make the changes to the UI
 
     // Make the URL immutable
@@ -101,8 +102,8 @@ async function processNewImageUrl() {
     const userGroups = await fetchUserGroups();
 
 
-    console.log("Groups for this pic: " + JSON.stringify(picGroups) );
-    console.log("Groups for this user: " + JSON.stringify(userGroups) );
+    //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
+    //console.log("Groups for this user: " + JSON.stringify(userGroups) );
 
 
     // Show the "change URL" button
