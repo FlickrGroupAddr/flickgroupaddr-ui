@@ -7,7 +7,7 @@ async function fetchPicGroups( imageUrl ) {
     // Parse the pic ID out of the URL they gave us
     const tokenArray = imageUrl.split('/');
 
-    console.log( "Tokenized URL:\n" + JSON.stringify(tokenArray) );
+    //console.log( "Tokenized URL:\n" + JSON.stringify(tokenArray) );
 
     if ( tokenArray.length < 6 ) {
         console.log( "Rejecting request, doesn't appear to be valid" );
@@ -15,7 +15,7 @@ async function fetchPicGroups( imageUrl ) {
     }
     const photoId = tokenArray[5];
 
-    console.log("Think we got photo ID " + photoId );
+    //console.log("Think we got photo ID " + photoId );
 
     // That offset thing is dangerous AF, let's make sure it's purely numeric like a photo
     // ID
@@ -41,7 +41,7 @@ async function fetchPicGroups( imageUrl ) {
 
     const jsonBody = await fetchResponse.json();
 
-    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+    //console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
     return jsonBody['groups_for_pic'];
 }
