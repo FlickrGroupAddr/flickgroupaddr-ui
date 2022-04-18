@@ -3,6 +3,12 @@ const flickrPictureEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaw
 const flickrUserEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user";
 
 async function fetchPicGroups( imageUrl ) {
+
+    // Parse the pic ID out of the URL they gave us
+    const tokenArray = imageUrl.split('/');
+
+    console.log( "Tokenized URL:\n" + JSON.stringify(tokenArray) );
+
     const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
         {
             flickr_photo_id     : "51852627871",
