@@ -9,9 +9,22 @@ async function fetchPicGroups( imageUrl ) {
 
     console.log( "Tokenized URL:\n" + JSON.stringify(tokenArray) );
 
+    if ( tokenArray.length < 5 ) {
+        console.log( "Rejecting request, doesn't appear to be valid );
+        return;
+    }
+    const photoId = tokenArray[4];
+
+    // That offset thing is dangerous AF, let's make sure it's purely numeric like a photo
+    // ID
+    if ( isNaN(photoId) === true ) {
+        console.log( "The token we found wasn't numeric, bailing out" );
+        reurn;
+    }
+
     const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
         {
-            flickr_photo_id     : "51852627871",
+            flickr_photo_id     : photoId,
             query_type          : "picture_groups"
         }
     );
