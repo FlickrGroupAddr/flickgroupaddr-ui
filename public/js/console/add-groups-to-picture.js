@@ -20,7 +20,7 @@ async function fetchPicGroups( imageUrl ) {
 
     const jsonBody = await fetchResponse.json();
 
-    return jsonBody['flickr_groups'];
+    return jsonBody['groups_for_pic'];
 }
 
 
