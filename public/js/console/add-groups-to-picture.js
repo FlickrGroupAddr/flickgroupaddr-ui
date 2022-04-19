@@ -102,10 +102,15 @@ async function processNewImageUrl() {
     const picGroups = await fetchPicGroups( imageUrl );
     const userGroups = await fetchUserGroups();
 
-
     //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
     //console.log("Groups for this user: " + JSON.stringify(userGroups) );
 
+    // Walk the list of user's groups.  For each one, see if it's also in the
+    //      list of groups for this pic. If so, highlight the row
+
+    for ( const groupId in userGroups ) {
+        console.log("Found group ID " + groupId);
+    }
 
     // Show the "change URL" button
     document.getElementById("button_change_url").style.display = "block";
