@@ -117,7 +117,15 @@ async function processNewImageUrl() {
         groupNameToIdMap[ userGroups[groupId]['name'] ] = groupId;
     }
 
-    console.log("Built map:\n" + JSON.stringify(groupNameToIdMap) );
+    //console.log("Built map:\n" + JSON.stringify(groupNameToIdMap) );
+
+    let sortedGroupNames = Object.keys( groupNameToIdMap );
+    sortedGroupNames.sort();
+
+    for ( currGroupName in sortedGroupNames ) {
+        console.log( "Group name: " + currGroupName +
+            ", group ID: " + groupNameToIdMap[currGroupName] );
+    }
 
     // Show the "change URL" button
     document.getElementById("button_change_url").style.display = "block";
