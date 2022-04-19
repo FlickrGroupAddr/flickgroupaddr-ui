@@ -44,6 +44,7 @@ button#button_change_url {
 }
 
 table#table_picture_groups {
+    margin-top: 0.25in;
     margin-left: 0.5in;
     display: none;
     border: 1px solid black;
