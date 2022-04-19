@@ -48,6 +48,7 @@ table#table_picture_groups {
     display: none;
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 0.1in;
 }
 
 table#table_picture_groups td {
