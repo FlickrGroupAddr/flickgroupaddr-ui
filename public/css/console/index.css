@@ -56,3 +56,9 @@ table#table_picture_groups tr td {
     padding: 0.1in;
     font-size: small;
 }
+
+table#table_picture_groups tr.header_row td {
+    background-color: #222222;
+    text-color: white;
+    font-weight: bold;
+}
