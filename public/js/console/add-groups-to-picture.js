@@ -99,6 +99,8 @@ async function processNewImageUrl() {
 
     console.log("User wants to add new groups to image " + imageUrl );
 
+    console.log("Test test test");
+
     const picGroups = await fetchPicGroups( imageUrl );
     const userGroups = await fetchUserGroups();
 
