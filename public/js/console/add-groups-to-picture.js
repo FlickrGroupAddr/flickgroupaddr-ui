@@ -103,7 +103,7 @@ async function processNewImageUrl() {
     const userGroups = await fetchUserGroups();
 
     //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
-    //console.log("Groups for this user: " + JSON.stringify(userGroups) );
+    console.log("Groups for this user: " + JSON.stringify(userGroups) );
 
     // Walk the list of user's groups.  For each one, see if it's also in the
     //      list of groups for this pic. If so, highlight the row
