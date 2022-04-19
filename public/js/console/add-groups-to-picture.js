@@ -99,20 +99,25 @@ async function processNewImageUrl() {
 
     console.log("User wants to add new groups to image " + imageUrl );
 
-    console.log("Test test test");
+    //console.log("Test test test");
 
     const picGroups = await fetchPicGroups( imageUrl );
     const userGroups = await fetchUserGroups();
 
     //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
-    console.log("Groups for this user: " + JSON.stringify(userGroups) );
+    //console.log("Groups for this user: " + JSON.stringify(userGroups) );
 
     // Walk the list of user's groups.  For each one, see if it's also in the
     //      list of groups for this pic. If so, highlight the row
 
+    let groupNameToIdMap = {};
+
     for ( const groupId in userGroups ) {
-        console.log("Found group ID " + groupId);
+        //console.log("Found group ID " + groupId);
+        groupNameToIdMap[ userGroups[groupId]['name'] ] = groupId;
     }
+
+    console.log("Built map:\n" + JSON.stringify(groupNameToIdMap) );
 
     // Show the "change URL" button
     document.getElementById("button_change_url").style.display = "block";
