@@ -44,5 +44,12 @@ button#button_change_url {
 }
 
 table#table_picture_groups {
+    margin-left: 0.5in;
     display: none;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table#table_picture_groups td {
+    border: 1px solid black;
 }
