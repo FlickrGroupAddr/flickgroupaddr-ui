@@ -122,7 +122,7 @@ async function processNewImageUrl() {
     let sortedGroupNames = Object.keys( groupNameToIdMap );
     sortedGroupNames.sort();
 
-    for ( currGroupName in sortedGroupNames ) {
+    for ( currGroupName of sortedGroupNames ) {
         console.log( "Group name: " + currGroupName +
             ", group ID: " + groupNameToIdMap[currGroupName] );
     }
