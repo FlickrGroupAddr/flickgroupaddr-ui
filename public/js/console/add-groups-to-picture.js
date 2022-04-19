@@ -120,13 +120,29 @@ async function processNewImageUrl() {
     //console.log("Built map:\n" + JSON.stringify(groupNameToIdMap) );
 
     let sortedGroupNames = Object.keys( groupNameToIdMap );
-    sortedGroupNames.sort();
 
-    console.log( "Created sorted name list:\n" + JSON.stringify(sortedGroupNames) );
+    // Case insensitive sort
+    sortedGroupNames.sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
 
-    for ( currGroupName of sortedGroupNames ) {
+    //console.log( "Created sorted name list:\n" + JSON.stringify(sortedGroupNames) );
+    let tableRef = document.getElementById("table_picture_groups");
+
+    for ( currGroupName of sortedGroupNames ) { 
+        let currRow = tableRef.insertRow(-1);
+
+        /*
         console.log( "Group name: " + currGroupName +
             ", group ID: " + groupNameToIdMap[currGroupName] );
+        */
+        const currGroupId = groupNameToIdMap[currGroupName];
+
+        let groupNameTd = currRow.insertCell();
+        groupNameTd.innerHTML = currGroupName;
+
+        let picInGroupTd = currRow.insertCell();
+        
     }
 
     // Show the "change URL" button
