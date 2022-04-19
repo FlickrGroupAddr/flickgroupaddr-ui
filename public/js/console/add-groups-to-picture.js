@@ -122,6 +122,8 @@ async function processNewImageUrl() {
     let sortedGroupNames = Object.keys( groupNameToIdMap );
     sortedGroupNames.sort();
 
+    console.log( "Created sorted name list:\n" + JSON.stringify(sortedGroupNames) );
+
     for ( currGroupName of sortedGroupNames ) {
         console.log( "Group name: " + currGroupName +
             ", group ID: " + groupNameToIdMap[currGroupName] );
