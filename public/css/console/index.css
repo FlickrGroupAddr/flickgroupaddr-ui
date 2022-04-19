@@ -51,7 +51,8 @@ table#table_picture_groups {
     border-collapse: collapse;
 }
 
-table#table_picture_groups td {
+table#table_picture_groups tr td {
     border: 1px solid black;
     padding: 0.1in;
+    font-size: small;
 }
