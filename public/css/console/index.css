@@ -71,3 +71,7 @@ table#table_picture_groups tr.pic_in_group td {
 table#table_picture_groups tr.pic_not_in_group td {
     cursor: pointer;
 };
+
+table#table_picture_group tr.pic_not_in_group:hover td {
+    background-color: #cccccc; 
+}
