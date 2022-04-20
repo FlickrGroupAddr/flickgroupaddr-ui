@@ -54,7 +54,7 @@ table#table_picture_groups {
 table#table_picture_groups tr td {
     border: 1px solid black;
     padding: 0.05in;
-    font-size: x-small;
+    font-size: xx-small;
 }
 
 table#table_picture_groups tr.header_row td {
