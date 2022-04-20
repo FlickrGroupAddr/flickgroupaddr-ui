@@ -148,7 +148,7 @@ async function processNewImageUrl() {
             picInGroupTd.innerHTML = "YES";
         } else {
             console.log("Picture is not in group " + currGroupName);
-        
+        }        
     }
 
     // Show the "change URL" button
