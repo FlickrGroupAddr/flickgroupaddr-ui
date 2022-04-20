@@ -101,6 +101,10 @@ function addPictureToGroup( photoId, groupId ) {
 
     //console.log( "Selected row: " + selectedRow );
 
+    // Let's remove all classes 
+    selectedRow.className = "";
+
+    // Now add the one class we want
     selectedRow.classList.add( "processing_group_add" );
 
     console.log("Classes for selected row:" );
