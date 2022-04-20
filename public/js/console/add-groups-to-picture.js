@@ -101,20 +101,17 @@ function addPictureToGroup( photoId, groupId ) {
 
     //console.log( "Selected row: " + selectedRow );
 
-    // Let's remove all classes 
+    // wipe all classes to start fresh, only want one class a time
     selectedRow.className = "";
 
     // Now add the one class we want
     selectedRow.classList.add( "processing_group_add" );
 
-    console.log("Classes for selected row:" );
-
-    for ( const currClass of selectedRow.classList ) {
-        console.log( "Row class: " + currClass );
-    }
-    console.log("done printing class list for selected row" );
-
     // Remove all event listeners -- can't click it again
+    let newRow = selectedRow.cloneNode(true);
+    selectedRow.parentNode.replaceChild( newRow, selectedRow );
+
+    selectedRow = newRow;
 }
 
 
