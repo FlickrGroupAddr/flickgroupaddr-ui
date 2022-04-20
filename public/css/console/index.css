@@ -67,3 +67,7 @@ table#table_picture_groups tr.pic_in_group td {
     background-color: green;
     color: white;
 }
+
+table#table_picture_groups tr.pic_not_in_group td {
+    cursor: pointer;
+};

@@ -21,9 +21,7 @@ function changeUrl() {
     }
 }
 
-
-async function fetchPicGroups( imageUrl ) {
-
+function getPictureIdFromImageUrl( imageUrl ) {
     // Parse the pic ID out of the URL they gave us
     const tokenArray = imageUrl.split('/');
 
@@ -31,19 +29,23 @@ async function fetchPicGroups( imageUrl ) {
 
     if ( tokenArray.length < 6 ) {
         console.log( "Rejecting request, doesn't appear to be valid" );
-        return;
+        return null;
     }
-    const photoId = tokenArray[5];
 
-    //console.log("Think we got photo ID " + photoId );
+    const photoId = tokenArray[5];
 
     // That offset thing is dangerous AF, let's make sure it's purely numeric like a photo
     // ID
     if ( isNaN(photoId) === true ) {
         console.log( "The token we found wasn't numeric, bailing out" );
-        return;
+        return null;
     }
 
+    return photoId;
+}
+
+
+async function fetchPicGroups( photoId ) {
     const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
         {
             flickr_photo_id     : photoId,
@@ -90,8 +92,8 @@ async function fetchUserGroups() {
 }
 
 
-function addPictureToGroup( event ) {
-    console.log("Apparently user wants to add a picture to a group which it is not currently in!");
+function addPictureToGroup( photoId, groupId ) {
+    console.log("User wants to add photo " + photoId + " to group " + groupId );
 }
 
 
@@ -108,11 +110,13 @@ async function processNewImageUrl() {
 
     const imageUrl = document.getElementById("input_new_request_url").value;
 
-    console.log("User wants to add new groups to image " + imageUrl );
+    const photoId = getPictureIdFromImageUrl( imageUrl );
+
+    console.log("User wants to add new groups to image " + photoId );
 
     //console.log("Test test test");
 
-    const picGroups = await fetchPicGroups( imageUrl );
+    const picGroups = await fetchPicGroups( photoId );
     const userGroups = await fetchUserGroups();
 
     //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
@@ -159,9 +163,13 @@ async function processNewImageUrl() {
             picInGroupTd.innerHTML = "YES";
             currRow.classList.add( "pic_in_group" );
         } else {
-            // Set the ID for this row and add a listener for it to be clicked
-            currRow.id = "tr_flickr_group_" + currGroupId;
-            currRow.addEventListener( "click", addPictureToGroup );
+            // Due to weirdness with closures, we have to pass an anonymous function which
+            //      passes the parameter
+            currRow.addEventListener( "click", 
+                function(){ addPictureToGroup(photoId, currGroupId); } );
+
+            // We need to set the class for this row so the cursor changes
+            currRow.classList.add( "pic_not_in_group" );
         }        
     }
 
