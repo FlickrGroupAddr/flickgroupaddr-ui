@@ -107,6 +107,8 @@ async function processNewImageUrl() {
     //console.log("Groups for this pic: " + JSON.stringify(picGroups) );
     //console.log("Groups for this user: " + JSON.stringify(userGroups) );
 
+    console.log( "Number of groups for this user: " + Object.keys(userGroups).length );
+
     // Walk the list of user's groups.  For each one, see if it's also in the
     //      list of groups for this pic. If so, highlight the row
 
@@ -117,6 +119,9 @@ async function processNewImageUrl() {
         groupNameToIdMap[ userGroups[groupId]['name'] ] = groupId;
     }
 
+    console.log( "Number of entries in group name to ID map: " +
+        Object.keys(groupNameToIdMap).length );
+
     //console.log("Built map:\n" + JSON.stringify(groupNameToIdMap) );
 
     let sortedGroupNames = Object.keys( groupNameToIdMap );
@@ -126,11 +131,16 @@ async function processNewImageUrl() {
         return a.toLowerCase().localeCompare(b.toLowerCase());
     });
 
+    console.log( "List of sorted group names length: " + sortedGroupNames.length );
+
     //console.log( "Created sorted name list:\n" + JSON.stringify(sortedGroupNames) );
     let tableRef = document.getElementById("table_picture_groups");
 
+    let rowsAdded = 0;
+
     for ( currGroupName of sortedGroupNames ) { 
         let currRow = tableRef.insertRow(-1);
+        rowsAdded = rowsAdded + 1;
 
         /*
         console.log( "Group name: " + currGroupName +
@@ -151,6 +161,8 @@ async function processNewImageUrl() {
             //console.log("Picture is not in group " + currGroupName);
         }        
     }
+
+    console.log( "Added " + rowsAdded + " rows to the table" );
 
     // Show the "change URL" button
     document.getElementById("button_change_url").style.display = "block";
