@@ -142,6 +142,12 @@ async function processNewImageUrl() {
         groupNameTd.innerHTML = currGroupName;
 
         let picInGroupTd = currRow.insertCell();
+
+        if ( currGroupId in picGroups ) {
+            console.log("Picture is in group " + currGroupName );
+            picInGroupTd.innerHTML = "YES";
+        } else {
+            console.log("Picture is not in group " + currGroupName);
         
     }
 
