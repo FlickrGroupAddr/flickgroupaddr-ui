@@ -94,6 +94,14 @@ async function fetchUserGroups() {
 
 function addPictureToGroup( photoId, groupId ) {
     console.log("User wants to add photo " + photoId + " to group " + groupId );
+
+
+    // Set that row to cyan background to show we're processing
+    let selectedRow = document.getElementById("tr_flickr_group_" + groupId );
+
+    selectedRow.classList.add( "processing_group_add" );
+
+    // Remove all event listeners -- can't click it again
 }
 
 
@@ -170,6 +178,9 @@ async function processNewImageUrl() {
 
             // We need to set the class for this row so the cursor changes
             currRow.classList.add( "pic_not_in_group" );
+
+            // Set the ID for this row so we can change its color when it is clicked
+            currRow.id = "tr_flickr_group_" + currGroupId; 
         }        
     }
 

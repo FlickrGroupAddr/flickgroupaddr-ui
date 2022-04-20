@@ -72,3 +72,6 @@ table#table_picture_groups tr.pic_not_in_group td {
     cursor: pointer;
 };
 
+table#table_picture_groups tr.processing_group_add td {
+    background-color: cyan;
+}
