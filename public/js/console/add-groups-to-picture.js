@@ -146,6 +146,7 @@ async function processNewImageUrl() {
         if ( currGroupId in picGroups ) {
             //console.log("Picture is in group " + currGroupName );
             picInGroupTd.innerHTML = "YES";
+            currRow.classList.add( "pic_in_group" );
         } else {
             //console.log("Picture is not in group " + currGroupName);
         }        

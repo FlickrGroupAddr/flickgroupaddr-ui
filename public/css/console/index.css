@@ -62,3 +62,8 @@ table#table_picture_groups tr.header_row td {
     color: white;
     font-weight: bold;
 }
+
+table#table_picture_groups tr.pic_in_group td {
+    background-color: green;
+    color: white;
+}
