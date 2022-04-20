@@ -161,8 +161,7 @@ async function processNewImageUrl() {
         } else {
             // Set the ID for this row and add a listener for it to be clicked
             currRow.id = "tr_flickr_group_" + currGroupId;
-            currRow.addEventListener( "click,
-                addPictureToGroup );
+            currRow.addEventListener( "click", addPictureToGroup );
         }        
     }
 
