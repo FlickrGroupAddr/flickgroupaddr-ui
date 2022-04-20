@@ -11,8 +11,14 @@ function changeUrl() {
     document.getElementById("input_new_request_url").disabled = false;
     document.getElementById("input_new_request_url").value = "";
 
-    document.getElementById("table_picture_groups").style.display = "none";
+    let tableRef = document.getElementById("table_picture_groups");
+    tableRef.style.display = "none";
 
+    // Now delete all rows from the table but the header row
+    while ( tableRef.rows.length > 1 ) {
+        // Delete last row
+        tableRef.deleteRow( -1 );
+    }
 }
 
 
