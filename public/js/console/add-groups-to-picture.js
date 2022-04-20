@@ -99,7 +99,16 @@ function addPictureToGroup( photoId, groupId ) {
     // Set that row to cyan background to show we're processing
     let selectedRow = document.getElementById("tr_flickr_group_" + groupId );
 
+    //console.log( "Selected row: " + selectedRow );
+
     selectedRow.classList.add( "processing_group_add" );
+
+    console.log("Classes for selected row:" );
+
+    for ( const currClass of selectedRow.classList ) {
+        console.log( "Row class: " + currClass );
+    }
+    console.log("done printing class list for selected row" );
 
     // Remove all event listeners -- can't click it again
 }
