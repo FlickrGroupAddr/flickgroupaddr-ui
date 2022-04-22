@@ -92,7 +92,7 @@ async function fetchUserGroups() {
 }
 
 
-function addPictureToGroup( photoId, groupId ) {
+async function addPictureToGroup( photoId, groupId ) {
     console.log("User wants to add photo " + photoId + " to group " + groupId );
 
 
