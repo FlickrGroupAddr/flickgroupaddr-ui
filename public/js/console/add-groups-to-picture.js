@@ -107,6 +107,9 @@ function addPictureToGroup( photoId, groupId ) {
     // Now add the one class we want
     selectedRow.classList.add( "processing_group_add" );
 
+    // Set the background color to cyan to indicate a change is in progress
+    selectedRow.style.backgroundColor = "cyan";
+
     // Remove all event listeners -- can't click it again
     let newRow = selectedRow.cloneNode(true);
     selectedRow.parentNode.replaceChild( newRow, selectedRow );
