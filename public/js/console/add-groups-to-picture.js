@@ -115,6 +115,30 @@ function addPictureToGroup( photoId, groupId ) {
     selectedRow.parentNode.replaceChild( newRow, selectedRow );
 
     selectedRow = newRow;
+
+    // Now send request to add the picture to a group
+    const constructedRequestUrl = flickrPictureEndpoint + "?" + new URLSearchParams(
+        {
+            query_type          : "group_add",
+            flickr_photo_id     : photoId,
+            flickr_group_id     : groupId
+        }
+    );
+    const fetchResponse = await fetch( constructedRequestUrl,
+        {
+            headers: {
+                "Authorization": getFgaAuthToken()
+            },
+
+            method: "PUT"
+        });
+
+    if ( fetchResponse.ok ) {
+        selectedRow.style.backgroundColor = "green";
+        selectedRow.style.color = "white";
+    } else {
+        selectedRow.style.backgroundColor = "red";
+    }
 }
 
 
