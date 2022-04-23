@@ -12,19 +12,32 @@ async function getUserRequests() {
 
     const jsonBody = await fetchResponse.json();
 
-    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+    //console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
     return jsonBody['user_requests'];
-
-
 }
 
 function showUserRequests( userRequests ) {
     console.log( "Showing user requests" );
 
-}
+    let requestsTable = document.getElementById("table_fga_outstanding_requests");
 
-console.log("Loaded get user request script");
+    for ( const currRow of userRequests ) {
+       let tableRow = requestsTable.insertRow(-1); 
+
+       let picIdCell = tableRow.insertCell();
+       picIdCell.innerHTML = currRow['photo_id'];
+
+       let groupIdCell = tableRow.insertCell();
+       groupIdCell.innerHTML = currRow['group_id'];
+
+       let submittedCell = tableRow.insertCell();
+       submittedCell.innerHTML = currRow['original_request_timestamp'];
+
+       let lastAttemptCell = tableRow.insertCell();
+       lastAttemptCell.innerHTML = currRow['most_recent_attempt'];
+    }
+}
 
 userRequests = getUserRequests();
 
