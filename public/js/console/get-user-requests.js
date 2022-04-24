@@ -44,6 +44,9 @@ function showUserRequests( userRequests ) {
 
        let lastAttemptCell = tableRow.insertCell();
        lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
+
+       let lastAttemptStatusCell = tableRow.insertCell();
+       lastAttemptStatusCell.innerHTML = currRow['most_recent_attempt_status']
     }
 }
 
