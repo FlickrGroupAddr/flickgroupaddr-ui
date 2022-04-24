@@ -1,6 +1,6 @@
 const userRequestsUrl = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user/requests"
 
-async function getUserRequests() {
+async function getAndShowUserRequests() {
    const fetchResponse = await fetch( userRequestsUrl,
         {
             headers: {
@@ -47,5 +47,3 @@ function showUserRequests( userRequests ) {
 }
 
 getAndShowUserRequests();
-
-showUserRequests( userRequests );
