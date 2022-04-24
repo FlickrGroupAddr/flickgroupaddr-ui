@@ -12,7 +12,7 @@ async function getUserRequests() {
 
     const jsonBody = await fetchResponse.json();
 
-    //console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
     return jsonBody['user_requests'];
 }
@@ -41,6 +41,6 @@ function showUserRequests( userRequests ) {
     }
 }
 
-userRequests = getUserRequests();
+const userRequests = getUserRequests();
 
 showUserRequests( userRequests );
