@@ -14,7 +14,12 @@ async function getUserRequests() {
 
     console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
-    return jsonBody['user_requests'];
+    const userRequests = jsonBody['user_requests'];
+
+    console.log( "Should just be the array inside that return:\n" + 
+        JSON.stringify(jsonBody) );
+
+    showUserRequests( userRequests );
 }
 
 function showUserRequests( userRequests ) {
@@ -41,6 +46,6 @@ function showUserRequests( userRequests ) {
     }
 }
 
-const userRequests = getUserRequests();
+getAndShowUserRequests();
 
 showUserRequests( userRequests );
