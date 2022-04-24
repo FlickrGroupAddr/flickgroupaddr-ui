@@ -76,7 +76,7 @@ table#table_fga_outstanding_requests {
 }
 
 table#table_fga_outstanding_requests tr td {
-    padding: 0.05in;
+    padding: 0.10in;
     font-size: small;
 }
 
