@@ -39,10 +39,11 @@ function showUserRequests( userRequests ) {
        groupIdCell.innerHTML = currRow['group_id'];
 
        let submittedCell = tableRow.insertCell();
-       submittedCell.innerHTML = currRow['original_request_timestamp'];
+       submittedCell.innerHTML = currRow['original_request_timestamp'].substring(0, 20) +
+       "Z";
 
        let lastAttemptCell = tableRow.insertCell();
-       lastAttemptCell.innerHTML = currRow['most_recent_attempt'];
+       lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 20) + "Z";
     }
 }
 
