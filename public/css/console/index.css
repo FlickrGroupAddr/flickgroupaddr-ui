@@ -34,11 +34,6 @@ div#div_app_stats {
     display: none;
 }
 
-table#table_fga_outstanding_requests {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
 button#button_change_url {
     display: none;
 }
@@ -74,4 +69,15 @@ table#table_picture_groups tr.pic_not_in_group td {
 
 table#table_picture_groups tr.processing_group_add td {
     background-color: cyan;
+}
+
+table#table_fga_outstanding_requests tr td {
+    padding: 0.05in;
+    font-size: x-small;
+}
+
+table#table_fga_outstanding_requests tr.header_row td {
+    background-color: #666666;
+    color: white;
+    font-weight: bold;
 }
