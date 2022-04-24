@@ -73,7 +73,11 @@ table#table_picture_groups tr.processing_group_add td {
 
 table#table_fga_outstanding_requests tr td {
     padding: 0.05in;
-    font-size: x-small;
+    font-size: small;
+}
+
+table#table_fga_outstanding_requests tr:nth-child(2n+1) td {
+    background-color: #cccccc;
 }
 
 table#table_fga_outstanding_requests tr.header_row td {
