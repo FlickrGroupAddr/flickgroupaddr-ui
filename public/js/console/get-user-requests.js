@@ -22,6 +22,8 @@ function showUserRequests( userRequests ) {
 
     let requestsTable = document.getElementById("table_fga_outstanding_requests");
 
+    console.log( "user requests:\n" + JSON.stringify(userRequests) );
+
     for ( const currRow of userRequests ) {
        let tableRow = requestsTable.insertRow(-1); 
 
