@@ -71,13 +71,17 @@ table#table_picture_groups tr.processing_group_add td {
     background-color: cyan;
 }
 
+table#table_fga_outstanding_requests {
+    border-collapse: collapse;
+}
+
 table#table_fga_outstanding_requests tr td {
     padding: 0.05in;
     font-size: small;
 }
 
 table#table_fga_outstanding_requests tr:nth-child(2n+1) td {
-    background-color: #cccccc;
+    background-color: #e0e0e0;
 }
 
 table#table_fga_outstanding_requests tr.header_row td {
