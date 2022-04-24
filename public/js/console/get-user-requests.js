@@ -30,23 +30,28 @@ function showUserRequests( userRequests ) {
     console.log( "user requests:\n" + JSON.stringify(userRequests) );
 
     for ( const currRow of userRequests ) {
-       let tableRow = requestsTable.insertRow(-1); 
+        let tableRow = requestsTable.insertRow(-1); 
 
-       let picIdCell = tableRow.insertCell();
-       picIdCell.innerHTML = currRow['photo_id'];
+        let picIdCell = tableRow.insertCell();
+        picIdCell.innerHTML = currRow['photo_id'];
 
-       let groupIdCell = tableRow.insertCell();
-       groupIdCell.innerHTML = currRow['group_id'];
+        let groupIdCell = tableRow.insertCell();
+        groupIdCell.innerHTML = currRow['group_id'];
 
-       let submittedCell = tableRow.insertCell();
-       submittedCell.innerHTML = currRow['original_request_timestamp'].substring(0, 19) +
-       "Z";
+        let submittedCell = tableRow.insertCell();
+        submittedCell.innerHTML = currRow['original_request_timestamp'].substring(0, 19) +
+            "Z";
 
-       let lastAttemptCell = tableRow.insertCell();
-       lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
+        let lastAttemptCell = tableRow.insertCell();
+        if ( currRow['most_recent_attempt'] !=== null ) {
+            lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
+        }
 
-       let lastAttemptStatusCell = tableRow.insertCell();
-       lastAttemptStatusCell.innerHTML = currRow['most_recent_attempt_status']
+
+        let lastAttemptStatusCell = tableRow.insertCell();
+        if ( currRow['most_recent_attempt_status'] !=== null ) { 
+            lastAttemptStatusCell.innerHTML = currRow['most_recent_attempt_status']
+        }
     }
 }
 
