@@ -43,7 +43,7 @@ function showUserRequests( userRequests ) {
             "Z";
 
         let lastAttemptCell = tableRow.insertCell();
-        if ( currRow['most_recent_attempt'] !=== null ) {
+        if ( currRow['most_recent_attempt'] !== null ) {
             lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
         }
 
