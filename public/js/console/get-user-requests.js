@@ -48,7 +48,7 @@ function showUserRequests( userRequests ) {
         }
 
         let lastAttemptStatusCell = tableRow.insertCell();
-        lastAttemptStatusCell.innerHTML = currRow['most_recent_attempt_status']
+        lastAttemptStatusCell.innerHTML = "foobar"; //currRow['most_recent_attempt_status']
     }
 }
 
