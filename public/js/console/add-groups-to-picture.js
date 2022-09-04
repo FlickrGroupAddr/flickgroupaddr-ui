@@ -1,6 +1,6 @@
-const flickrPictureEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/picture";
+const flickrPictureEndpoint = "https://ue0ny85hec.execute-api.us-east-2.amazonaws.com/api/v001/flickr/picture";
 
-const flickrUserEndpoint = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user";
+const flickrUserEndpoint = "https://ue0ny85hec.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user";
 
 
 function changeUrl() {

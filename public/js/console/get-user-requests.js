@@ -1,4 +1,4 @@
-const userRequestsUrl = "https://x4etaszxrl.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user/requests"
+const userRequestsUrl = "https://ue0ny85hec.execute-api.us-east-2.amazonaws.com/api/v001/flickr/user/requests"
 
 async function getAndShowUserRequests() {
    const fetchResponse = await fetch( userRequestsUrl,
