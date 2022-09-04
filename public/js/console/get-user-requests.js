@@ -12,12 +12,14 @@ async function getAndShowUserRequests() {
 
     const jsonBody = await fetchResponse.json();
 
-    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+    //console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
     const userRequests = jsonBody['user_requests'];
 
+    /*
     console.log( "Should just be the array inside that return:\n" + 
         JSON.stringify(jsonBody) );
+    */
 
     showUserRequests( userRequests );
 }
@@ -27,7 +29,7 @@ function showUserRequests( userRequests ) {
 
     let requestsTable = document.getElementById("table_fga_outstanding_requests");
 
-    console.log( "user requests:\n" + JSON.stringify(userRequests) );
+    //console.log( "user requests:\n" + JSON.stringify(userRequests) );
 
     for ( const currRow of userRequests ) {
         let tableRow = requestsTable.insertRow(-1); 
