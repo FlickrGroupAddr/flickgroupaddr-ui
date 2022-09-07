@@ -44,13 +44,13 @@ function showUserRequests( userRequests ) {
         submittedCell.innerHTML = currRow['original_request_timestamp'].substring(0, 19) +
             "Z";
 
-        let lastAttemptCell = tableRow.insertCell();
+        let numberOfAttemptsCell = tableRow.insertCell();
+        /*
         if ( currRow['most_recent_attempt'] !== null ) {
             lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
         }
+        */
 
-        let lastAttemptStatusCell = tableRow.insertCell();
-        lastAttemptStatusCell.innerHTML = currRow['most_recent_attempt_status'];
     }
 }
 
