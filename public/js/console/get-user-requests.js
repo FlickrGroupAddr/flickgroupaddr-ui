@@ -12,7 +12,7 @@ async function getAndShowUserRequests() {
 
     const jsonBody = await fetchResponse.json();
 
-    console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
+    //console.log( "Got the following content back:\n" + JSON.stringify(jsonBody) );
 
     const userRequests = jsonBody['user_requests'];
 
