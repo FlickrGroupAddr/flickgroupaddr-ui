@@ -45,12 +45,7 @@ function showUserRequests( userRequests ) {
             "Z";
 
         let numberOfAttemptsCell = tableRow.insertCell();
-        /*
-        if ( currRow['most_recent_attempt'] !== null ) {
-            lastAttemptCell.innerHTML = currRow['most_recent_attempt'].substring(0, 19) + "Z";
-        }
-        */
-
+        numberOfAttemptsCell.innerHTML = currRow['number_of_attempts'];
     }
 }
 
